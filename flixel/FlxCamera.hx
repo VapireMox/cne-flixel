@@ -1492,8 +1492,10 @@ class FlxCamera extends FlxBasic
 	 */
 	function updateFlashOffset():Void
 	{
-		_flashOffset.x = width * 0.5 * FlxG.scaleMode.scale.x * initialZoom;
-		_flashOffset.y = height * 0.5 * FlxG.scaleMode.scale.y * initialZoom;
+		if(FlxG.scaleMode.scale.x != null && FlxG.scaleMode.scale.y != null) {
+			_flashOffset.x = width * 0.5 * FlxG.scaleMode.scale.x * initialZoom;
+			_flashOffset.y = height * 0.5 * FlxG.scaleMode.scale.y * initialZoom;
+		}
 	}
 
 	/**
